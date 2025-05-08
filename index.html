@@ -8,44 +8,64 @@
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pridi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Athiti&display=swap" rel="stylesheet">
+
+
     <title>MR.SANTA Shop!!💗</title>
 </head>
 
 <body>
     <style>
-        .product-device {
-          position: absolute;
-          right: 10%;
-          bottom: -30%;
-          width: 300px;
-          height: 540px;
-          background-color: #e5e5e5;
-          border-radius: 21px;
-          transform: rotate(30deg);
+        .product-image {
+            position: absolute;
+            width: 300px;
+            transition: all 0.5s ease;
         }
-      
-        .product-device-2 {
-          top: -25%;
-          right: auto;
-          bottom: 0;
-          left: 5%;
-          background-color: #333;
+
+        .img-left {
+            top: 50px;
+            left: 5%;
+            transform: rotate(-25deg);
         }
-      </style>
-      <style>
+
+        .img-right {
+            top: 50px;
+            right: 5%;
+            transform: rotate(25deg);
+        }
+
+        @media (max-width: 768px) {
+            .product-image {
+                position: relative;
+                display: block;
+                margin: 20px auto;
+                transform: none;
+                width: 80%;
+            }
+
+            .img-left,
+            .img-right {
+                top: auto;
+                left: auto;
+                right: auto;
+            }
+        }
+    </style>
+    <style>
         .fade-in {
-          opacity: 0;
-          transform: translateY(30px);
-          transition: all 1s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
         }
-      
+
         .fade-in.show {
-          opacity: 1;
-          transform: translateY(0);
+            opacity: 1;
+            transform: translateY(0);
         }
-      </style>
-      
-      
+    </style>
+
+
 
     <!-- NavBar -->
     <div class="container">
@@ -76,12 +96,12 @@
                     <div class="bd-example m-0 border-0 align-items-center jumbotron text-center"
                         style="color: #f07db3;">
                         <h1><strong>Hellooooooooo there!!</strong></h1>
-                        <h2><i>Welcome to my shop</i></h2>
+                        <h2><i>Welcome to my skincare Website</i></h2>
                         <h3><em>Your skincare is here</em></h3>
                         <h4><i>Following the page</i></h4>
                         <h5><small>I gonna show you</small></h5>
                         <h6><i><ins>the Precious thing</ins></i></h6>
-                        <h6><i><ins>What we can do</ins></i></h6>
+                        <h6><i><ins>What I can do</ins></i></h6>
                         <h6><i><ins>For you 😊</ins></i></h6>
                         <h1>🌟</h1>
                     </div>
@@ -89,13 +109,14 @@
             </div>
 
             <div class="col-lg-6">
-                <div class="text-center"> <img class="d-block mx-auto" src="img/MyLOGO.png"
-                        alt="" width="150" height="150">
+                <div class="text-center"> <img class="d-block mx-auto" src="img/MyLOGO.png" alt="" width="150"
+                        height="150">
                     <h1 class="display-5 fw-bold text-body-emphasis"
                         style="font-family: 'Courier New', Courier, monospace;">Practice Web</h1>
                     <div class="col-lg-6 mx-auto">
                         <p class="lead mb-4" style="font-family: 'Itim', cursive; font-size: 24px;">
-                            นี่คือเว็บไซต์ที่ทำขึ้นเพื่อฝึกเขียนโค้ด HTML/CSS/JavaScript และการใช้ Bootstrap ค้าบบบ
+                            นี่คือเว็บไซต์ที่ทำขึ้นเพื่อฝึกเขียนโค้ด HTML/CSS/JavaScript และการใช้ Bootstrap
+                            ค้าบบบ<br>อาจจะสวยไม่มากเพราะผม<br>ไม่เก่งศิลปะแต่จะพยายามค้าบบ
                         </p>
                     </div>
                 </div>
@@ -104,38 +125,79 @@
     </div>
     <!-- End HERO -->
 
-    <!-- What is skin cycling -->
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
-        <div class="col-md-6 p-lg-5 mx-auto my-5">
-            <h1 class="display-3 fw-bold">Skin Cycling</h1>
-            <h3 class="fw-normal text-muted mb-3">a way to give your skin a break – alternating powerful active ingredients with soothing rest days to aid the growth and repair cycle of the skin</h3>
-            <div style="height: 500px;">
-                <img src="img/LIP_UV.png" 
-                     style="position: absolute; 
-                            top: 20px; 
-                            right: 72%; 
-                            width: 500px; 
-                            height: auto; 
-                            transform: rotate(-30deg); 
-                            border-radius: 20px; 
-                ">
-            </div>
-            <div style="height: 500px;">
-                <img src="img/Yellow_Simple_Skincare_Product_Mockup.png" 
-                     style="position: absolute; 
-                            top: 20px; 
-                            right: 5%; 
-                            width: 500px; 
-                            height: auto; 
-                            transform: rotate(30deg); 
-                            border-radius: 20px; 
-                ">
-            </div>
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+        <div class="col-lg-6 px-0">
+            <h1 class="display-4 fst-italic">This website is following how to take care your skin</h1>
+            <p class="lead my-3" style="font-family: 'Athiti', serif;">
+                แรงจูงใจการทำเว็บไซต์เรื่องนี้เพราะพี่เลี้ยงในบริษัทที่กำลังฝึกงานอยู่สั่งให้ทำฮะ555555
+                <br>และเกิดจากคุณแม่สนใจเรื่องนี้เลยอยากทำไปให้แม่อ่าน แล้วก็อยากอวดด้วย</p>
+            <p class="lead mb-0" style="font-family: 'Athiti', sans-serif;">
+                <b>ถือโอกาสนี้ทำเว็บน่ารักๆเป็นของตัวเองไปเลอ!!</b></a></p>
         </div>
     </div>
 
-    
-      
+    <!-- What is skin cycling -->
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+
+        <div class="row">
+            <div class="col-md-4">
+                <img src="img/LIP_UV.png" class="fade-in product-image img-left" style="transform: rotate(30deg);">
+            </div>
+            <div class="col-md-4">
+                <h1 class="display-3 fw-bold">Skin Cycling</h1>
+                <h3 class="fw-normal text-muted mb-3" style="font-family: 'Athiti', sans-serif;">หลักการการดูแลผิวแบบ
+                    “Skin Cycling” ที่จริงก็คือ<br>การหมุนเวียนสลับใช้สกินแคร์ในแต่ละวัน หรือเรียกว่า
+                    การสร้างไซเคิลในการใช้สกินแคร์นั่นเอง โดยคอนเซปต์การดูแลผิวแบบนี้ถูกตั้งชื่อโดย Whitney Bowe
+                    แพทย์ผิวหนังชาวนิวยอร์ก และกลายเป็นเทรนด์ผิวที่กำลังถูกแชร์กันฉ่ำ</h3>
+            </div>
+            <div class="col-sm-4">
+                <img src="img/Yellow_Simple_Skincare_Product_Mockup.png" class="fade-in product-image img-right"
+                    style="transform: rotate(-30deg);">
+            </div>
+        </div>
+
+        <div class="row featurette" style="margin-top: 100px;">
+            <div class="col-md-7 order-md-4" >
+                <h2 class="featurette-heading fw-normal lh-1 display-3 fw-bold"><span class="text-body-secondary">How to Skin Cycling</span></h2>
+                <table class="table">
+                    <!-- ชื่อคอลัมม์ -->
+                    <thead>
+                      <tr>
+                        <th scope="col"> </th>
+                        <th scope="col"> </th>
+                        <th scope="col"> </th>
+                        <th scope="col"> </th>
+                      </tr>
+                    </thead>
+                    <!-- เนื้อหาแต่ละแถว -->
+                    <tbody>
+                      <tr>
+                        <th scope="row"> </th>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"> </th>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"> </th>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img src="img/howto-skin-cycling-01.jpg" alt="" class="fade-in img-fluid" style="box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+            </div>
+        </div>
+
+    </div>
 
 
     <!-- Script -->
@@ -143,6 +205,28 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    </body>
+
+    <script>
+        const fadeEls = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target); // ทำแค่ครั้งเดียว
+                }
+            });
+        }, {
+            threshold: 0.1 // เห็น 10% ก็แสดง
+        });
+
+        fadeEls.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+
+
+</body>
 
 </html>
