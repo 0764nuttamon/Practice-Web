@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
     <!-- ✅ Tailwind CSS build -->
     <link href="/styles.css" rel="stylesheet">
 
@@ -122,7 +125,7 @@
     <nav class="navbar navbar-expand-md sticky-top" style="background-color: rgb(236, 255, 192);
   border-bottom: 3px solid #ffffff;
   border-radius: 0 0 20px 20px;
-  filter: drop-shadow(0 0 15px #b0e6b9) drop-shadow(0 0 40px #d0f1cf);
+  filter: drop-shadow(0 0 15px #ffffff) drop-shadow(0 0 40px #d0f1cf);
   transition: all 0.3s ease;
   z-index: 999;">
         <div class="container-fluid">
@@ -172,59 +175,43 @@
 
 
     <!-- HERO -->
-    <div class="container-fluid"
-        style="background: linear-gradient(to right, #d0f1cf, #b0e6b9, #9adbb0, #7ecaa2, #61bfa1);">
-        <div class="row">
+<div class="container-fluid position-relative"
+    style="background-image: url('img/wall2.webp');
+           background-size: cover;
+           background-position: center;
+           background-repeat: no-repeat;
+           padding-top: 150px;
+           padding-bottom: 100px;">
 
-            <div class="col-lg-6">
-                <div class="  my-5  d-flex  justify-content-center">
-                    <img class="d-block mx-auto img-fluid"
-                        style="filter: drop-shadow(0 0 30px #a1eacb) drop-shadow(0 0 80px #7ecaa2);"
-                        src="img/Korean_best_skin-removebg-preview.png" alt="" width="auto" height="400px">
-                </div>
-            </div>
+    <!-- ✅ Overlay ดำบางๆ -->
+    <div style="position: absolute; 
+                top: 0; left: 0; right: 0; bottom: 0; 
+                background-color: rgba(0, 0, 0, 0.4); 
+                z-index: 1;"></div>
 
-            <div class="col-lg-6">
-                <div class="text-center" style="margin-top: 150px;">
-                    <h1 class="display-5 fw-bold " style="color: white; margin-top: 20px;">Practice Web</h1>
-                    <h1 style="color: white; margin-top: 20px;">About : Skin Cycling</h1>
-                    <h3 style="color: white; margin-top: 50px; font-family: 'Athiti', serif;"><b><i>สกินไซคลิ่ง (Skin
-                                Cycling) คือ แนวทางการดูแลผิวแบบเว้นวัน โดยสลับการใช้ผลิตภัณฑ์ที่มีสารออกฤทธิ์แรง (เช่น
-                                AHA,
-                                BHA, Retinol) กับวันพักผิว เพื่อให้ผิวมีเวลาฟื้นฟูตัวเอง ไม่ระคายเคือง
-                                และทำให้ผลลัพธ์ดีขึ้นในระยะยาว 🌙✨</i></b></h3>
-                    <a href="#c1" class="btn btn-success btn-lg mt-4"
-                        style="border-radius: 50px; font-family: 'Athiti', serif;"
-                        onclick="setTimeout(() => history.replaceState(null, null, ' '), 100);">
-                        💚 เริ่มเข้าใจผิวของเราเลย
-                    </a>
-
-
-                    <p style="margin-top: 3%;">Created by Gift Nuttamon Chanseeda</p>
-
-                </div>
-            </div>
+    <!-- ✅ เนื้อหาด้านบน overlay -->
+    <div class="row position-relative" style="z-index: 2;">
+        <div class="col-lg-12 text-center text-white">
+            <h1 class="display-5 fw-bold">Practice Web</h1>
+            <h1 style="margin-top: 20px;">About : Skin Cycling</h1>
+            <h3 style="margin-top: 50px; font-family: 'Athiti', serif;">
+                <b><i>
+                    สกินไซคลิ่ง (Skin Cycling) คือ แนวทางการดูแลผิวแบบเว้นวัน โดยสลับการใช้ผลิตภัณฑ์ที่มีสารออกฤทธิ์แรง
+                    (เช่น AHA, BHA, Retinol) กับวันพักผิว เพื่อให้ผิวมีเวลาฟื้นฟูตัวเอง ไม่ระคายเคือง
+                    และทำให้ผลลัพธ์ดีขึ้นในระยะยาว 🌙✨
+                </i></b>
+            </h3>
+            <a href="#c1" class="btn btn-success btn-lg mt-4"
+                style="border-radius: 50px; font-family: 'Athiti', serif;"
+                onclick="setTimeout(() => history.replaceState(null, null, ' '), 100);">
+                💚 เริ่มเข้าใจผิวของเราเลย
+            </a>
+            <p style="margin-top: 3%;">Created by Gift Nuttamon Chanseeda</p>
         </div>
     </div>
-    <!-- End HERO -->
+</div>
+<!-- End HERO -->
 
-
-    <!-- wave -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <defs>
-            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#d0f1cf;" />
-                <stop offset="25%" style="stop-color:#b0e6b9;" />
-                <stop offset="50%" style="stop-color:#9adbb0;" />
-                <stop offset="75%" style="stop-color:#7ecaa2;" />
-                <stop offset="100%" style="stop-color:#61bfa1;" />
-            </linearGradient>
-        </defs>
-        <path fill="url(#waveGradient)" fill-opacity="1"
-            d="M0,32L120,74.7C240,117,480,203,720,202.7C960,203,1200,117,1320,74.7L1440,32L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z">
-        </path>
-    </svg>
-    <!-- End wave -->
 
     <!-- Skin Cycling Section -->
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center rounded-4 shadow">
@@ -373,7 +360,7 @@
     </div>
 
     <!-- ทำความเข้าใจผิวของเรากัน -->
-    <div id="c1" class="container-fluid " style="font-family: 'Athiti', serif;">
+    <div id="c1" class="container " style="font-family: 'Athiti', serif;">
         <div class="row">
             <div style="display: flex; align-items: center; justify-content: center; margin: 30px 0;">
                 <div
@@ -526,6 +513,8 @@
             </div>
         </div>
     </div>
+
+    
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <!-- Credit -->
