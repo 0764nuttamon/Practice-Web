@@ -123,27 +123,30 @@
         }
 
         .heart-beam {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-image: url('img/pink_heart-removebg-preview.png'); /* รูปหัวใจที่อัปโหลด */
-  background-size: cover;
-  animation: shootOut 0.8s ease-out forwards;
-  pointer-events: none;
-  z-index: 999;
-  opacity: 0.9;
-}
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('img/pink_heart-removebg-preview.png');
+            /* รูปหัวใจที่อัปโหลด */
+            background-size: cover;
+            animation: shootOut 0.8s ease-out forwards;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 8px hotpink) drop-shadow(0 0 12px deeppink);
+        }
 
-@keyframes shootOut {
-  0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(calc(-50px + 100px * var(--rand-x)), calc(-50px + 100px * var(--rand-y))) scale(1.5);
-    opacity: 0;
-  }
-}
+        @keyframes shootOut {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(calc(-50px + 100px * var(--rand-x)), calc(-50px + 100px * var(--rand-y))) scale(1.5);
+                opacity: 0;
+            }
+        }
     </style>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-md sticky-top" style="background-color: rgb(236, 255, 192);
@@ -173,7 +176,8 @@
                         <img src="img/MyLOGO.png" alt="Logo" width="100" style="height: auto;">
                     </li>
                     <li class="nav-item" style="margin-top: 30px;">
-                        <a class="nav-link fw-bold text-success px-3 heart-link" href="index.html">What is skin cycling</a>
+                        <a class="nav-link fw-bold text-success px-3 heart-link" href="index.html">What is skin
+                            cycling</a>
                     </li>
                     <li class="nav-item" style="margin-top: 30px;">
                         <a class="nav-link fw-bold text-dark px-3 heart-link" href="01retinol.html">Retinal</a>
@@ -199,42 +203,41 @@
 
 
     <!-- HERO -->
-<div class="container-fluid position-relative"
-    style="background-image: url('img/wall4.jpg');
+    <div class="container-fluid position-relative" style="background-image: url('img/wall4.jpg');
            background-size: cover;
            background-position: center;
            background-repeat: no-repeat;
            padding-top: 150px;
            padding-bottom: 100px;">
 
-    <!-- ✅ Overlay ดำบางๆ -->
-    <div style="position: absolute; 
+        <!-- ✅ Overlay ดำบางๆ -->
+        <div style="position: absolute; 
                 top: 0; left: 0; right: 0; bottom: 0; 
                 background-color: rgba(0, 0, 0, 0.4); 
                 z-index: 1;"></div>
 
-    <!-- ✅ เนื้อหาด้านบน overlay -->
-    <div class="row position-relative" style="z-index: 2;">
-        <div class="col-lg-12 text-center text-white">
-            <h1 class="display-5">Practice Web</h1>
-            <h1 style="margin-top: 20px;">About : Skin Cycling</h1>
-            <h3 style="margin-top: 50px; font-family: 'Athiti', serif;">
-                
+        <!-- ✅ เนื้อหาด้านบน overlay -->
+        <div class="row position-relative" style="z-index: 2;">
+            <div class="col-lg-12 text-center text-white">
+                <h1 class="display-5">Practice Web</h1>
+                <h1 style="margin-top: 20px;">About : Skin Cycling</h1>
+                <h3 style="margin-top: 50px; font-family: 'Athiti', serif;">
+
                     สกินไซคลิ่ง (Skin Cycling) คือ แนวทางการดูแลผิวแบบเว้นวัน โดยสลับการใช้ผลิตภัณฑ์ที่มีสารออกฤทธิ์แรง
                     (เช่น AHA, BHA, Retinol) กับวันพักผิว <br>เพื่อให้ผิวมีเวลาฟื้นฟูตัวเอง ไม่ระคายเคือง
                     และทำให้ผลลัพธ์ดีขึ้นในระยะยาว 🌙✨
-                
-            </h3>
-            <a href="#c1" class="btn btn-success btn-lg mt-4"
-                style="border-radius: 50px; font-family: 'Athiti', serif;"
-                onclick="setTimeout(() => history.replaceState(null, null, ' '), 100);">
-                💚 เริ่มเข้าใจผิวของเราเลย
-            </a>
-            <p style="margin-top: 3%;">Created by Gift Nuttamon Chanseeda</p>
+
+                </h3>
+                <a href="#c1" class="btn btn-success btn-lg mt-4"
+                    style="border-radius: 50px; font-family: 'Athiti', serif;"
+                    onclick="setTimeout(() => history.replaceState(null, null, ' '), 100);">
+                    💚 เริ่มเข้าใจผิวของเราเลย
+                </a>
+                <p style="margin-top: 3%;">Created by Gift Nuttamon Chanseeda</p>
+            </div>
         </div>
     </div>
-</div>
-<!-- End HERO -->
+    <!-- End HERO -->
 
 
     <!-- Skin Cycling Section -->
@@ -538,7 +541,7 @@
         </div>
     </div>
 
-    
+
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <!-- Credit -->
@@ -605,36 +608,36 @@
     </script>
 
     <script>
-  // ฟุ้งทุกจุด
-  document.body.addEventListener('click', function (e) {
-    for (let i = 0; i < 10; i++) {
-      const heart = document.createElement('div');
-      heart.className = 'heart-beam';
-      document.body.appendChild(heart);
+        // ฟุ้งทุกจุด
+        document.body.addEventListener('click', function (e) {
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-beam';
+                document.body.appendChild(heart);
 
-      const x = e.pageX - 15;
-      const y = e.pageY - 15;
-      heart.style.left = x + 'px';
-      heart.style.top = y + 'px';
+                const x = e.pageX - 15;
+                const y = e.pageY - 15;
+                heart.style.left = x + 'px';
+                heart.style.top = y + 'px';
 
-      heart.style.setProperty('--rand-x', Math.random());
-      heart.style.setProperty('--rand-y', Math.random());
+                heart.style.setProperty('--rand-x', Math.random());
+                heart.style.setProperty('--rand-y', Math.random());
 
-      setTimeout(() => heart.remove(), 1000);
-    }
-  });
+                setTimeout(() => heart.remove(), 1000);
+            }
+        });
 
-  // เฉพาะปุ่ม .heart-link ที่จะเปลี่ยนหน้า
-  document.querySelectorAll('.heart-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = link.getAttribute('href');
-      setTimeout(() => {
-        window.location.href = target;
-      }, 800);
-    });
-  });
-</script>
+        // เฉพาะปุ่ม .heart-link ที่จะเปลี่ยนหน้า
+        document.querySelectorAll('.heart-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = link.getAttribute('href');
+                setTimeout(() => {
+                    window.location.href = target;
+                }, 800);
+            });
+        });
+    </script>
 
 
 </body>
