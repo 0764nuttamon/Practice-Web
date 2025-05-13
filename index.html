@@ -121,6 +121,29 @@
                 background-position: 100% 50%;
             }
         }
+
+        .heart-beam {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url('img/pink_heart-removebg-preview.png'); /* รูปหัวใจที่อัปโหลด */
+  background-size: cover;
+  animation: shootOut 0.8s ease-out forwards;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.9;
+}
+
+@keyframes shootOut {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50px + 100px * var(--rand-x)), calc(-50px + 100px * var(--rand-y))) scale(1.5);
+    opacity: 0;
+  }
+}
     </style>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-md sticky-top" style="background-color: rgb(236, 255, 192);
@@ -150,22 +173,22 @@
                         <img src="img/MyLOGO.png" alt="Logo" width="100" style="height: auto;">
                     </li>
                     <li class="nav-item" style="margin-top: 30px;">
-                        <a class="nav-link fw-bold text-success px-3" href="index.html">What is skin cycling</a>
+                        <a class="nav-link fw-bold text-success px-3 heart-link" href="index.html">What is skin cycling</a>
                     </li>
                     <li class="nav-item" style="margin-top: 30px;">
-                        <a class="nav-link fw-bold text-dark px-3" href="01retinol.html">Retinal</a>
+                        <a class="nav-link fw-bold text-dark px-3 heart-link" href="01retinol.html">Retinal</a>
                     </li>
                     <li class="nav-item" style="margin-top: 30px;">
-                        <a class="nav-link fw-bold text-dark px-3" href="02Moisturizer.html">Moisturizer</a>
+                        <a class="nav-link fw-bold text-dark px-3 heart-link" href="02Moisturizer.html">Moisturizer</a>
                     </li>
                     <li class="nav-item" style="margin-top: 30px;">
-                        <a class="nav-link fw-bold text-dark px-3" href="03AHA & BHA.html">AHA & BHA</a>
+                        <a class="nav-link fw-bold text-dark px-3 heart-link" href="03AHA & BHA.html">AHA & BHA</a>
                     </li>
                     <li class="nav-item" style="margin-top: 30px;">
-                        <a class="nav-link fw-bold text-dark px-3" href="04Cleanser.html">Cleanser</a>
+                        <a class="nav-link fw-bold text-dark px-3 heart-link" href="04Cleanser.html">Cleanser</a>
                     </li>
                     <li class="nav-item" style="margin-top: 30px;">
-                        <a class="nav-link fw-bold text-dark px-3" style="color: white;"
+                        <a class="nav-link fw-bold text-dark px-3 heart-link" style="color: white;"
                             href="https://www.cosmenet.in.th/cosme-intrend/50165">อ้างอิง</a>
                     </li>
                 </ul>
@@ -580,6 +603,39 @@
             observer.observe(el);
         });
     </script>
+
+    <script>
+  // ฟุ้งทุกจุด
+  document.body.addEventListener('click', function (e) {
+    for (let i = 0; i < 10; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart-beam';
+      document.body.appendChild(heart);
+
+      const x = e.pageX - 15;
+      const y = e.pageY - 15;
+      heart.style.left = x + 'px';
+      heart.style.top = y + 'px';
+
+      heart.style.setProperty('--rand-x', Math.random());
+      heart.style.setProperty('--rand-y', Math.random());
+
+      setTimeout(() => heart.remove(), 1000);
+    }
+  });
+
+  // เฉพาะปุ่ม .heart-link ที่จะเปลี่ยนหน้า
+  document.querySelectorAll('.heart-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = link.getAttribute('href');
+      setTimeout(() => {
+        window.location.href = target;
+      }, 800);
+    });
+  });
+</script>
+
 
 </body>
 
