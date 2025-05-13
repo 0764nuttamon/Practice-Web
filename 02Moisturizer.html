@@ -117,6 +117,32 @@
                 background-position: 100% 50%;
             }
         }
+
+        .heart-beam {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('img/pink_heart-removebg-preview.png');
+            /* รูปหัวใจที่อัปโหลด */
+            background-size: cover;
+            animation: shootOut 0.8s ease-out forwards;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 8px hotpink) drop-shadow(0 0 12px deeppink);
+        }
+
+        @keyframes shootOut {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(calc(-50px + 100px * var(--rand-x)), calc(-50px + 100px * var(--rand-y))) scale(1.5);
+                opacity: 0;
+            }
+        }
     </style>
 
     <!-- NavBar -->
@@ -236,6 +262,38 @@
 
         fadeEls.forEach(el => {
             observer.observe(el);
+        });
+    </script>
+
+    <script>
+        // ฟุ้งทุกจุด
+        document.body.addEventListener('click', function (e) {
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-beam';
+                document.body.appendChild(heart);
+
+                const x = e.pageX - 15;
+                const y = e.pageY - 15;
+                heart.style.left = x + 'px';
+                heart.style.top = y + 'px';
+
+                heart.style.setProperty('--rand-x', Math.random());
+                heart.style.setProperty('--rand-y', Math.random());
+
+                setTimeout(() => heart.remove(), 1000);
+            }
+        });
+
+        // เฉพาะปุ่ม .heart-link ที่จะเปลี่ยนหน้า
+        document.querySelectorAll('.heart-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = link.getAttribute('href');
+                setTimeout(() => {
+                    window.location.href = target;
+                }, 800);
+            });
         });
     </script>
 </body>
